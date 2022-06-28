@@ -1,0 +1,4 @@
+
+[
+    {"model": "patterns.businessprocess", "pk": 1, "fields": {"name": "Proceso de negocio", "description": "Un Proceso de negocio", "category": 1}}
+]

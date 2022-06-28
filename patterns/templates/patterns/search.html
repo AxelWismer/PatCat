@@ -1,0 +1,53 @@
+{% extends 'patterns/base.html' %}
+{% block content %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 col-md-10 col-md-offset-1">
+			<section id="main" >
+				<h1>Busqueda de patrones</h1>
+
+        <!-- Botón de busqueda -->
+                <form method="post" action=".">
+					{% csrf_token %}
+					<div class="input-group">
+						<span class="input-group-btn">
+								<button class="btn" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+						</span>
+						<input maxlength="50" type="text" name="q" value="{{ query }}" class="form-control searchResultsInput" placeholder="Buscar...">
+					</div>
+				</form>
+				<!-- Resultados -->
+				<br>
+				<div>
+					<div>
+						<span class="">{{patterns|length}} resultado/s</span>
+					</div>
+					<div>
+							{% for result in patterns %}
+								 <!-- <a href="{{ result }}"> -->
+	 								<div class="row">
+	 									<div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
+	 										<h1>{{ result.name }}</h2>
+											<h3>{{ result.description }}</h3>
+											<!-- <h3>{{ result.structure }}</h3> -->
+											<h3>Tipo: {{ result.type }}</h3>
+											<h3>Catalogo: {{ result.catalogue }}</h3>
+	 									</div>
+	 								</div>
+	 							<!-- </a> -->
+                <hr>
+							{% endfor %}
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+
+{% block scripts %}
+{% endblock %}
+
+
+</script>
+{% endblock %}

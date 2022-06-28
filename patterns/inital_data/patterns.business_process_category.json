@@ -1,0 +1,4 @@
+
+[
+    {"model": "patterns.businessprocesscategory", "pk": 1, "fields": {"name": "Categoria de proceso de negocio", "description": "Una categoria de proceso de negocio"}}
+]

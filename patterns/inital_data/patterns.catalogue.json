@@ -1,0 +1,12 @@
+
+[
+    {
+        "model": "patterns.catalogue", "pk": 1, "fields": 
+        {
+            "title": "Catálogo", 
+            "description": "Catálogo de patrones de negocio", 
+            "date": "2022-06-04",
+            "business_process": 1
+        }
+    }
+]

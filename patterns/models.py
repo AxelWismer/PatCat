@@ -7,7 +7,7 @@ DESCRIPTION = models.TextField(verbose_name="Descripción")
 
 
 # Business Processes
-class BusinessProcessCateggory(models.Model):
+class BusinessProcessCategory(models.Model):
     name = NAME
     description = DESCRIPTION
 
@@ -22,7 +22,7 @@ class BusinessProcess(models.Model):
     name = NAME
     description = DESCRIPTION
     category = models.ForeignKey(
-        BusinessProcessCateggory, on_delete=models.PROTECT,
+        BusinessProcessCategory, on_delete=models.PROTECT,
         verbose_name="Categoria")
 
     def __str__(self): return self.name
@@ -50,7 +50,6 @@ class Catalogue (models.Model):
 # Patterns
 class PatternType(models.Model):
     name = NAME
-    description = DESCRIPTION
     intent = models.TextField(verbose_name="Intención")
     motivation = models.TextField(verbose_name="Motivación")
     applicability = models.TextField(verbose_name="Aplicación")
@@ -71,7 +70,7 @@ class Pattern(models.Model):
     name = NAME
     description = DESCRIPTION
     structure = models.TextField(verbose_name="Estructura")
-    type = models.ForeignKey(PatternType, on_delete=models.PROTECT, verbose_name="Tipo")
+    type = models.ForeignKey(PatternType, on_delete=models.PROTECT, verbose_name="Tipo de Patrón")
     catalogue = models.ForeignKey(Catalogue, on_delete=models.PROTECT, verbose_name="Catálogo")
 
     def __str__(self): return self.name

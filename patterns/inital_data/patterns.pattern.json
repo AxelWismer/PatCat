@@ -1,0 +1,13 @@
+
+[
+    {
+        "model": "patterns.pattern", "pk": 1, "fields": 
+        {
+            "name": "Gestión de consultas de ciudadanos",
+            "description": "",
+            "structure": "Diagrama según lo especificado por Eriksson & Penker (2000)",
+            "type": 1,
+            "catalogue": 1
+        }
+    }
+]
