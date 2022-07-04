@@ -1,13 +1,35 @@
-
 [
-    {
-        "model": "patterns.pattern", "pk": 1, "fields": 
-        {
-            "name": "Gestión de consultas de ciudadanos",
-            "description": "",
-            "structure": "Diagrama según lo especificado por Eriksson & Penker (2000)",
-            "type": 1,
-            "catalogue": 1
-        }
+  {
+    "model": "patterns.pattern",
+    "pk": 1,
+    "fields": {
+      "name": "Objetivos",
+      "description": "El patrón de objetivo es uno de los tipos de patrones de negocio.",
+      "structure": "Diagrama según lo especificado por Eriksson & Penker (2000).",
+      "type": 1,
+      "catalogue": 1
     }
+  },
+  {
+    "model": "patterns.pattern",
+    "pk": 2,
+    "fields": {
+      "name": "Estructura básica del proceso",
+      "description": "El patrón estructura básica del proceso es un patrón de negocio que permite expresar el concepto principal del proceso considerando el suministro de recursos, el objetivo a alcanzar, la transformación o el perfeccionamiento de entradas y los resultados en salida.",
+      "structure": "Diagrama según lo especificado por Eriksson & Penker (2000) y Marciszack et al. (2018).",
+      "type": 1,
+      "catalogue": 1
+    }
+  },
+  {
+    "model": "patterns.pattern",
+    "pk": 3,
+    "fields": {
+      "name": "Proceso de interacción",
+      "description": "El patrón proceso de interacción detalla múltiples interacciones que ocurren entre los diferentes procesos de negocio.",
+      "structure": "Diagrama según lo especificado por Eriksson & Penker (2000) y Marciszack et al. (2018).",
+      "type": 1,
+      "catalogue": 1
+    }
+  }
 ]

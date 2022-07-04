@@ -1,17 +1,17 @@
-
 [
-    {
-        "model": "patterns.patterntype", "pk": 1, "fields": 
-        {
-            "name": "Objetivo",
-            "intent": "Proporcionar una interface jerárquica de objetivo-problema-solución para un sistema de consultas de Gobierno Electrónico.",
-            "motivation": "El patrón de objetivo es uno de los tipos de patrones de negocio. Este patrón es parte de un modelo de análisis para aplicación de patrones de buenas prácticas en el Modelado Conceptual de sistemas de Gobierno Electrónico. El modelo propuesto emplea determinados tipos de patrones de software: patrones de negocio, de análisis y de escenario. Los patrones de Gobierno Electrónico conforman un catálogo de soluciones, que tienen implementadas buenas prácticas, y que pueden ser utilizados por un ingeniero de software para modelar un nuevo sistema E-Gob que desea resolver el mismo problema",
-            "applicability": "Modelado de proceso y Modelado Conceptual de software público para la gestión de consultas ciudadanas, mesa de entradas y ventanilla única.",
-            "paricipants": "Ingeniero de software, utiliza las interfaces seleccionadas de un catálogo de patrones",
-            "consequences": "1. Permite seleccionar un patrón a partir de la descripción de los problemas que resuelve y que puede ser reutilizado en otro contexto. 2. Facilita la relación con otros tipos de patrones de negocio de un mismo sistema. 3. Promueve la consistencia entre las interfaces para la propuesta inicial de un Modelo Conceptual de un software público.",
-            "example": "Sistema de gestión de consultas de ciudadanos de la Caja de Jubilaciones, Pensiones y Retiros de Córdoba, Argentina.",
-            "related_pattens": "Gestión de consultas de ciudadanos – Estructura básica del proceso y Gestión de consultas de ciudadanos – Proceso de interacción.",
-            "source_credit": "“Un caso de estudio de patrones de Gobierno Electrónico para gestión de consultas de ciudadanos” de Medina, O.C., Cánepa, P.A., Gruppo, M.O. y Groppo, M.A. Publicado en actas de CONAIISI 2018, Red RIISIC, CONFEDI y Universidad CAECE, 2018."
-        }
+  {
+    "model": "patterns.patterntype",
+    "pk": 1,
+    "fields": {
+      "name": "Gestión de consultas de ciudadanos",
+      "intent": "Proporcionar una interface jerárquica de objetivo-problema-solución para un sistema de consultas de Gobierno Electrónico.",
+      "motivation": "Este patrón es parte de un modelo de análisis para aplicación de patrones de buenas prácticas en el Modelado Conceptual de sistemas de Gobierno Electrónico. El modelo propuesto emplea determinados tipos de patrones de software: patrones de negocio, de análisis y de escenario. Los patrones de Gobierno Electrónico conforman un catálogo de soluciones, que tienen implementadas buenas prácticas, y que pueden ser utilizados por un ingeniero de software para modelar un nuevo sistema E-Gob que desea resolver el mismo problema.",
+      "applicability": "Modelado de proceso y Modelado Conceptual de software público para la gestión de consultas ciudadanas, mesa de entradas y ventanilla única.",
+      "paricipants": "Ingeniero de software, utiliza las interfaces seleccionadas de un catálogo de patrones",
+      "consequences": "1. Permite seleccionar un patrón a partir de la descripción de los problemas que resuelve y que puede ser reutilizado en otro contexto. 2. Facilita la relación con otros tipos de patrones de negocio de un mismo sistema. 3. Promueve la consistencia entre las interfaces para la propuesta inicial de un Modelo Conceptual de un software público.",
+      "example": "Sistema de gestión de consultas de ciudadanos de la Caja de Jubilaciones, Pensiones y Retiros de Córdoba, Argentina.",
+      "related_pattens": "Gestión de consultas de ciudadanos – Estructura básica del proceso y Gestión de consultas de ciudadanos – Proceso de interacción.",
+      "source_credit": "“Un caso de estudio de patrones de Gobierno Electrónico para gestión de consultas de ciudadanos” de Medina, O.C., Cánepa, P.A., Gruppo, M.O. y Groppo, M.A. Publicado en actas de CONAIISI 2018, Red RIISIC, CONFEDI y Universidad CAECE, 2018."
     }
+  }
 ]
