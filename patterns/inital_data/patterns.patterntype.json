@@ -1,0 +1,23 @@
+[
+  {
+    "model": "patterns.patterntype",
+    "pk": 1,
+    "fields": {
+      "name": "Objetivos"
+    }
+  },
+  {
+    "model": "patterns.patterntype",
+    "pk": 2,
+    "fields": {
+      "name": "Estructura básica del proceso"
+    }
+  },
+  {
+    "model": "patterns.patterntype",
+    "pk": 3,
+    "fields": {
+      "name": "Proceso de interacción"
+    }
+  }
+]

@@ -1,5 +1,5 @@
 # PatCat
-PatCat (Pattern Catalogue) is a web catalog of business patterns applied in real cases of e-government.
+PatCat (Pattern Catalog) is a web catalog of business patterns applied in real cases of e-government.
 
 # Modules
 ## Pattern
@@ -9,7 +9,7 @@ Manages the application models and their modification by an administrator.
 # Instalation and execution
 - Create a virtual env for python3
     python venv venv
-- Intstall libraries:
+- Install libraries:
     pip install -r requirements.txt
 
 # Generating the docs

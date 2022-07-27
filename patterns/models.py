@@ -51,15 +51,6 @@ class Catalogue (models.Model):
 # Patterns
 class PatternType(models.Model):
     name = NAME
-    intent = models.TextField(verbose_name="Intención")
-    motivation = models.TextField(verbose_name="Motivación")
-    applicability = models.TextField(verbose_name="Aplicación")
-    paricipants = models.TextField(verbose_name="Participantes")
-    consequences = models.TextField(verbose_name="Consequencias")
-    example = models.TextField(verbose_name="Ejemplo")
-    related_pattens = models.TextField(verbose_name="Patrones relacionados")
-    source_credit = models.TextField(verbose_name="Creditos a la fuente")
-
     def __str__(self): return self.name
 
     class Meta:
@@ -71,17 +62,26 @@ class PatternType(models.Model):
         return f'{self.name} {self.intent} {self.motivation} {self.applicability} {self.paricipants} {self.consequences} {self.example}'.split()
 
 class Pattern(models.Model):
-    name = NAME
+    name = models.CharField(max_length=50, verbose_name="Nombre")
     description = DESCRIPTION
     structure = models.TextField(verbose_name="Estructura")
     type = models.ForeignKey(PatternType, on_delete=models.PROTECT, verbose_name="Tipo de Patrón")
     catalogue = models.ForeignKey(Catalogue, on_delete=models.PROTECT, verbose_name="Catálogo")
-
-    def __str__(self): return self.name
+    intent = models.TextField(verbose_name="Intención")
+    motivation = models.TextField(verbose_name="Motivación")
+    applicability = models.TextField(verbose_name="Aplicación")
+    paricipants = models.TextField(verbose_name="Participantes")
+    consequences = models.TextField(verbose_name="Consequencias")
+    example = models.TextField(verbose_name="Ejemplo")
+    related_pattens = models.TextField(verbose_name="Patrones relacionados")
+    source_credit = models.TextField(verbose_name="Creditos a la fuente")
+    
+    def __str__(self): return f'{self.name} ({self.type})'
 
     class Meta:
         verbose_name = "Patrón"
         verbose_name_plural = "Patrones"
+        unique_together = (("name", "type"),)
     
     def get_words(self):
         words = unicodedata.normalize('NFKD', f'{self.name} {self.description} {self.type.name} {self.catalogue.title}'.lower()).encode('ASCII', 'ignore').split()
