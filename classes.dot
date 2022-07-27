@@ -1,0 +1,18 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"patterns.models.BusinessProcess" [color="black", fontcolor="black", label="{BusinessProcess|category : ForeignKey\ldescription : TextField\lname : CharField\l|}", shape="record", style="solid"];
+"patterns.models.BusinessProcessCategory" [color="black", fontcolor="black", label="{BusinessProcessCategory|description : TextField\lname : CharField\l|}", shape="record", style="solid"];
+"patterns.models.Catalogue" [color="black", fontcolor="black", label="{Catalogue|business_process : ForeignKey\ldate : DateField\ldescription : TextField\ltitle : CharField\l|}", shape="record", style="solid"];
+"patterns.models.BusinessProcessCategory.Meta" [color="black", fontcolor="black", label="{Meta|verbose_name : str\lverbose_name_plural : str\l|}", shape="record", style="solid"];
+"patterns.models.BusinessProcess.Meta" [color="black", fontcolor="black", label="{Meta|verbose_name : str\lverbose_name_plural : str\l|}", shape="record", style="solid"];
+"patterns.models.Catalogue.Meta" [color="black", fontcolor="black", label="{Meta|verbose_name : str\lverbose_name_plural : str\l|}", shape="record", style="solid"];
+"patterns.models.PatternType.Meta" [color="black", fontcolor="black", label="{Meta|verbose_name : str\lverbose_name_plural : str\l|}", shape="record", style="solid"];
+"patterns.models.Pattern.Meta" [color="black", fontcolor="black", label="{Meta|verbose_name : str\lverbose_name_plural : str\l|}", shape="record", style="solid"];
+"patterns.models.Paper.Meta" [color="black", fontcolor="black", label="{Meta|verbose_name : str\lverbose_name_plural : str\l|}", shape="record", style="solid"];
+"patterns.migrations.0001_initial.Migration" [color="black", fontcolor="black", label="{Migration|dependencies : list\linitial : bool\loperations : list\l|}", shape="record", style="solid"];
+"patterns.models.Paper" [color="black", fontcolor="black", label="{Paper|abstract : TextField\lcatalogue : ForeignKey\ldate : DateField\leditor : TextField\ltitle : CharField\l|}", shape="record", style="solid"];
+"patterns.apps.PatronesConfig" [color="black", fontcolor="black", label="{PatronesConfig|default_auto_field : str\lname : str\l|}", shape="record", style="solid"];
+"patterns.models.Pattern" [color="black", fontcolor="black", label="{Pattern|catalogue : ForeignKey\ldescription : TextField\lname : CharField\lstructure : TextField\ltype : ForeignKey\l|get_words()\l}", shape="record", style="solid"];
+"patterns.models.PatternType" [color="black", fontcolor="black", label="{PatternType|applicability : TextField\lconsequences : TextField\lexample : TextField\lintent : TextField\lmotivation : TextField\lname : CharField\lparicipants : TextField\lrelated_pattens : TextField\lsource_credit : TextField\l|get_words()\l}", shape="record", style="solid"];
+}

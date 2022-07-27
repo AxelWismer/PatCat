@@ -9,7 +9,7 @@ def search(request):
 
     context['query'] = query = request.POST['q'] if request.method == 'POST' else ''
 
-    context['patterns'] = list(
+    patterns = context['patterns'] = list(
         Pattern.objects.filter(
             Q(name__icontains=query)
             | Q(description__icontains=query)

@@ -38,7 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'patterns',
+    'django_extensions'
 ]
+
+GRAPH_MODELS = {
+    'all_applications': False,
+    'group_models': True,
+    'app_labels': ["patterns"],
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

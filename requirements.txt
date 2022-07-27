@@ -1,1 +1,7 @@
 Django==4.0.5
+nltk==3.7
+unicode==2.9
+pydot==1.4.2
+pylint==2.14.5
+graphviz==0.20.1
+django-extensions==3.2.0

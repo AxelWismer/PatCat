@@ -1,4 +1,5 @@
 from django.db import models
+import unicodedata
 
 # Common fields
 NAME = models.CharField(max_length=50, unique=True, verbose_name="Nombre")
@@ -64,7 +65,10 @@ class PatternType(models.Model):
     class Meta:
         verbose_name = "Tipo de patrón"
         verbose_name_plural = "Tipos de patrones"
-
+    
+    def get_words(self):
+        # TODO: Agregar palabras claves 
+        return f'{self.name} {self.intent} {self.motivation} {self.applicability} {self.paricipants} {self.consequences} {self.example}'.split()
 
 class Pattern(models.Model):
     name = NAME
@@ -78,7 +82,13 @@ class Pattern(models.Model):
     class Meta:
         verbose_name = "Patrón"
         verbose_name_plural = "Patrones"
-
+    
+    def get_words(self):
+        words = unicodedata.normalize('NFKD', f'{self.name} {self.description} {self.type.name} {self.catalogue.title}'.lower()).encode('ASCII', 'ignore').split()
+        thesaurus = {}
+        for word in words:
+            thesaurus[word] = thesaurus[word] + 1 if word in thesaurus else 1
+        return thesaurus
 
 # Paper
 class Paper(models.Model):
