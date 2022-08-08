@@ -1,5 +1,7 @@
 rm patterns/migrations/0001_initial.py
 rm db.sqlite3
+rm -R media/
+cp -r test_data/ media/
 
 python manage.py makemigrations
 python manage.py migrate

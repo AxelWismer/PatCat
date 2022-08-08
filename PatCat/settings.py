@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'patterns',
-    'django_extensions'
+    'django_extensions',
+    'django_cleanup'
 ]
 
 GRAPH_MODELS = {
@@ -59,6 +60,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'PatCat.urls'
 
+MEDIA_ROOT = "media"
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

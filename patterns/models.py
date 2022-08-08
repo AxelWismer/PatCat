@@ -1,3 +1,5 @@
+from distutils import extension
+from distutils.command.upload import upload
 from django.db import models
 import unicodedata
 
@@ -46,8 +48,8 @@ class SmartContract (models.Model):
     def __str__(self): return self.title
 
     class Meta:
-        verbose_name = "Contrato inteligente"
-        verbose_name_plural = "Contratos inteligente"
+        verbose_name = "Contrato inteligentes"
+        verbose_name_plural = "Contratos inteligentes"
 
 
 # Patterns
@@ -60,14 +62,17 @@ class PatternType(models.Model):
         verbose_name_plural = "Tipos de patrones"
 
     def get_words(self):
-        # TODO: Agregar palabras claves
         return f'{self.name} {self.intent} {self.motivation} {self.applicability} {self.paricipants} {self.consequences} {self.example}'.split()
 
 
+def structure_path(instance, filename):
+    extension = filename[filename.index(".", len(filename) - 5):]
+    return f'structure/{instance.name}-{instance.type.name}{extension}'
+
 class Pattern(models.Model):
-    name = models.CharField(max_length=200, verbose_name="Nombre")
+    name = models.CharField(max_length=200, verbose_name="Nombre", null=True, blank=True)
     description = DESCRIPTION
-    structure = models.TextField(verbose_name="Estructura")
+    structure = models.ImageField(upload_to=structure_path, verbose_name="Estructura")
     type = models.ForeignKey(
         PatternType, on_delete=models.PROTECT, verbose_name="Tipo de Patrón")
     catalogue = models.ForeignKey(
@@ -96,9 +101,8 @@ class Pattern(models.Model):
             thesaurus[word] = thesaurus[word] + 1 if word in thesaurus else 1
         return thesaurus
 
+
 # Paper
-
-
 class Paper(models.Model):
     title = TITLE
     date = models.DateField(auto_now=True, verbose_name="Fecha de creacion")

@@ -5,7 +5,7 @@
     "fields": {
       "name": "Gestión de consultas de ciudadanos",
       "description": "El patrón de objetivo es uno de los tipos de patrones de negocio.",
-      "structure": "Diagrama según lo especificado por Eriksson & Penker (2000).",
+      "structure": null,
       "type": 1,
       "catalogue": 1,
       "intent": "Proporcionar una interface jerárquica de objetivo-problema-solución para un sistema de consultas de Gobierno Electrónico.",
@@ -24,7 +24,7 @@
     "fields": {
       "name": "Gestión de consultas de ciudadanos",
       "description": "El patrón estructura básica del proceso es un patrón de negocio que permite expresar el concepto principal del proceso considerando el suministro de recursos, el objetivo a alcanzar, la transformación o el perfeccionamiento de entradas y los resultados en salida.",
-      "structure": "Diagrama según lo especificado por Eriksson & Penker (2000) y Marciszack et al. (2018).",
+      "structure": "Gestión_de_consultas_de_ciudadanos-Estructura_básica_del_proceso.png",
       "type": 2,
       "catalogue": 1,
       "intent": "Proporcionar una interface jerárquica de objetivo-problema-solución para un sistema de consultas de Gobierno Electrónico.",
@@ -43,7 +43,7 @@
     "fields": {
       "name": "Gestión de consultas de ciudadanos",
       "description": "El patrón proceso de interacción detalla múltiples interacciones que ocurren entre los diferentes procesos de negocio.",
-      "structure": "Diagrama según lo especificado por Eriksson & Penker (2000) y Marciszack et al. (2018).",
+      "structure": "Gestión_de_consultas_de_ciudadanos-Proceso_de_interacción.png",
       "type": 3,
       "catalogue": 1,
       "intent": "Proporcionar una interface jerárquica de objetivo-problema-solución para un sistema de consultas de Gobierno Electrónico.",
