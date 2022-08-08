@@ -1,0 +1,4 @@
+
+[
+    {"model": "patterns.usecasecategory", "pk": 1, "fields": {"name": "Categoria de caso de uso", "description": ""}}
+]

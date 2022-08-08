@@ -1,0 +1,4 @@
+
+[
+    {"model": "patterns.usecase", "pk": 1, "fields": {"name": "Consulta de ciudadnos del sistema previcional de la provincia de Córdoba", "description": "", "category": null}}
+]
