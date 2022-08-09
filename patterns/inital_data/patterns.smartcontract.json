@@ -1,12 +1,12 @@
-
 [
-    {
-        "model": "patterns.smartcontract", "pk": 1, "fields": 
-        {
-            "title": "Consulta al ciudadano", 
-            "description": "", 
-            "date": "2022-06-04",
-            "business_process": 1
-        }
+  {
+    "model": "patterns.smartcontract",
+    "pk": 1,
+    "fields": {
+      "title": "Consulta al ciudadano",
+      "description": "",
+      "date": "2022-06-04",
+      "business_process": 1
     }
+  }
 ]
