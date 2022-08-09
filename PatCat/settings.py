@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-#*7=^jd)gdy!a1ukzm9=8zea!3wlh7)9oh0=l^92xq43sx3+md
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ["127.0.0.1"]
 
 
 # Application definition
@@ -131,3 +132,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import sys
+RUNNING_DB_COMMANDS = (len(sys.argv) > 1 and sys.argv[1] in ['makemigrations', 'migrate', 'graph_models'])

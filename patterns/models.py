@@ -1,5 +1,5 @@
-from distutils import extension
-from distutils.command.upload import upload
+from distutils.log import error
+from textwrap import indent
 from django.db import models
 import unicodedata
 
@@ -7,7 +7,6 @@ import unicodedata
 NAME = models.CharField(max_length=200, unique=True, verbose_name="Nombre")
 TITLE = models.CharField(max_length=200, unique=True, verbose_name="Titulo")
 DESCRIPTION = models.TextField(verbose_name="Descripción", blank=True)
-
 
 # Business Processes
 class UseCaseCategory(models.Model):

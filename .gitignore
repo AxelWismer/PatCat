@@ -2,6 +2,8 @@
 media/
 investigation.txt
 .vscode
+db.json
+initial_db.sqlite3
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
