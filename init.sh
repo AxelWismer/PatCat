@@ -8,16 +8,17 @@ rm db.sqlite3
 # Set the initial files
 rm -R media/
 cp -r test_data/ media/
+mkdir media/db
 cp patterns/inital_data/db.json media/db/db.json
 
 # Aply migrations and store a copy of the db
 python manage.py makemigrations
 python manage.py migrate
 cp db.sqlite3 initial_db.sqlite3
-mkdir media/db
 
 # Create the documentation
 python manage.py graph_models -o docs/patterns_models.png
+python manage.py graph_models memoryDB -o docs/memoryDB.png
 
 # Run the aplication
 python manage.py runserver
