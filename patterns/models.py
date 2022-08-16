@@ -1,5 +1,3 @@
-from distutils.log import error
-from textwrap import indent
 from django.db import models
 import unicodedata
 

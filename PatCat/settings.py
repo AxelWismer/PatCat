@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'patterns',
+    'memoryDB'
     'django_extensions',
-    'django_cleanup'
+    'django_cleanup',
 ]
 
 GRAPH_MODELS = {

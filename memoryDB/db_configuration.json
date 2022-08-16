@@ -1,0 +1,9 @@
+[
+  {
+    "model": "memoryDB.config",
+    "pk": 0,
+    "fields": {
+      "db": "db/db.json"
+    }
+  }
+]

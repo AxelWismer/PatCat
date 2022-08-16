@@ -4,6 +4,7 @@ investigation.txt
 .vscode
 db.json
 initial_db.sqlite3
+memoryDB/intermediate_db.json
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
