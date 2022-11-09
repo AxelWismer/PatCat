@@ -1,10 +1,10 @@
 from django.db import models
 from django.core.files.storage import get_storage_class
-
+from django.conf import settings
 # Create your models here.
-INTERMEDIATE_DB_URL = "memoryDB/intermediate_db.json"
+INTERMEDIATE_DB_URL = settings.TMP_DIR + "/intermediate_db.json"
 DB_CONFIGURATION = "memoryDB/db_configuration.json"
-DB_URL = "db/db.json"
+DB_URL = "db.json"
 
 # Custom data storage that always keeps the same name for a file
 class ConstantNamesStorage(get_storage_class()):

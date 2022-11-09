@@ -10,23 +10,32 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
-from pathlib import Path
+import os
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# The default sqlite library is replaced with the pysqlite3 library, which is updated.
+# The renaming is done so that it is accepted by the Django middleware.
+import pysqlite3
+import sys
+sys.modules['sqlite3'] = pysqlite3
 
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#*7=^jd)gdy!a1ukzm9=8zea!3wlh7)9oh0=l^92xq43sx3+md'
+SECRET_KEY = '-gcsl6-!i25x^)87^)ta@dbxmy#1yz$i6(44exby^j8y#13isb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+DEBUG_FILE_STORAGE = False
+LOCAL = False
 
+TMP_DIR = 'tmp' if LOCAL else '/tmp'
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+BASE_URL = '' if LOCAL else 'dev/'
+ALLOWED_HOSTS = ['houv30niob.execute-api.us-east-2.amazonaws.com', '127.0.0.1']
 
 
 # Application definition
@@ -62,7 +71,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'PatCat.urls'
 
-MEDIA_ROOT = "media"
+MEDIA_ROOT = TMP_DIR
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -88,7 +97,7 @@ WSGI_APPLICATION = 'PatCat.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(TMP_DIR,'db.sqlite3'),
     }
 }
 
@@ -113,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/4.0/topics/i18n/
+# https://docs.djangoproject.com/en/2.0/topics/i18n/
 
 LANGUAGE_CODE = 'es-ar'
 
@@ -121,13 +130,17 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-
-STATIC_URL = 'static/'
+STATIC_ROOT = 'static'
+STATIC_URL = BASE_URL + 'static/'
+WHITENOISE_STATIC_PREFIX = '/static/'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -136,3 +149,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 import sys
 RUNNING_DB_COMMANDS = (len(sys.argv) > 1 and sys.argv[1] in ['makemigrations', 'migrate', 'graph_models'])
+
+# S3 Config
+if not DEBUG_FILE_STORAGE:
+    AWS_STORAGE_BUCKET_NAME='patcat'
+    AWS_S3_SIGNATURE_VERSION='s3v4'
+    AWS_S3_REGION_NAME='us-east-2'
+    AWS_S3_FILE_OVERWRITE = True
+    AWS_DEFAULT_ACL = None
+    AWS_S3_VERIFY = True
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

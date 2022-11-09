@@ -3,13 +3,13 @@
 # rm old migrations and db 
 rm patterns/migrations/0001_initial.py
 rm memory_DB/migrations/0001_initial.py
-rm db.sqlite3
+rm tmp/db.sqlite3
 
 # Set the initial files
-rm -R media/
-cp -r test_data/ media/
+rm -R tmp/media/
+cp -r test_data/ tmp/media/
 mkdir media/db
-cp patterns/inital_data/db.json media/db/db.json
+cp patterns/inital_data/db.json tmp/db.json
 
 # Aply migrations and store a copy of the db
 python manage.py makemigrations

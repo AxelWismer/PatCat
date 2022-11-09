@@ -5,6 +5,11 @@ investigation.txt
 db.json
 initial_db.sqlite3
 memoryDB/intermediate_db.json
+tmp/
+static/
+aws_credentials.csv
+notes.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
