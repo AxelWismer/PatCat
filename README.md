@@ -3,6 +3,22 @@
 
 Project beta [here](https://houv30niob.execute-api.us-east-2.amazonaws.com/dev)
 
+# Architecture
+![alt text](/docs/architecture.png)
+
+The system is a Django web application that is deployed in AWS lambdas using Zappa. The application contains an SQLite in-memory database that obtains its data from a JSON file. The file is stored in an S3 bucket, and through the use of signals, it updates the file when a change in the database state occurs.
+
+This architecture was chosen in the context of an application that will be used mostly for queries and will have a single administrator at any one time. This application requires a small database with public data.
+
+### Advantages of the architecture:
+- Cost: Based on the expected usage, the application can run indefinitely on AWS's free layer.
+- Modularity: The data persistence mechanism can be modified at any time by removing the memoryDB application and configuring the new database from the settings file.
+- Scalability: Because the application is deployed in AWS lambdas, it can scale automatically to provide services to an unlimited number of users.
+
+### Disadvantages of the architecture:
+- Performance: Loading data into the memory database adds processing overhead that can decrease application response time.
+- Data scalability: The persistence mechanism is not suitable for large amounts of data.
+
 # Sections
 ## Admin section
 This section that allows an administrator to register all the data of the pattern catalog
@@ -52,3 +68,4 @@ This module allows the application to manage a database in memory, making a sing
     zappa init
     zappa deploy
     zappa update
+
