@@ -9,7 +9,7 @@ tmp/
 static/
 aws_credentials.csv
 notes.txt
-
+secret.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
