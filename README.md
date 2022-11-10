@@ -1,7 +1,7 @@
 # PatCat
-## PatCat (Pattern Catalog) is a web catalog of business patterns applied in real cases of e-government.
+### PatCat (Pattern Catalog) is a web catalog of business patterns applied in real cases of e-government.
 
-Project beta [here](https://houv30niob.execute-api.us-east-2.amazonaws.com/dev)
+### Check the [project beta](https://houv30niob.execute-api.us-east-2.amazonaws.com/dev)
 
 # Architecture
 ![alt text](/docs/architecture.png)
@@ -60,11 +60,11 @@ This module allows the application to manage a database in memory, making a sing
 ## To test the application run the init.sh script
     source init.sh
 
-## Deploy Django as lambda
+# Deploy Django App as AWS Lambda
 ### Collect the static files and place them in the S3.
     python manage.py collectstatic
 
-### Deploy commands
+### Deploy lambda with Zappa
     zappa init
     zappa deploy
     zappa update
