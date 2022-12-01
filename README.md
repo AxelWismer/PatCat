@@ -1,7 +1,7 @@
 # PatCat
-### PatCat (Pattern Catalog) is a web catalog of business patterns applied in real cases of e-government.
+PatCat (Pattern Catalog) is a web catalog of business patterns applied in real cases of e-government.
 
-### Check the [project beta](https://houv30niob.execute-api.us-east-2.amazonaws.com/dev)
+#### Check the [project beta](https://houv30niob.execute-api.us-east-2.amazonaws.com/dev)
 
 # Architecture
 ![alt text](/docs/architecture.png)
