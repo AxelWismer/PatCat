@@ -9,3 +9,4 @@ django-cleanup==6.0.0
 django-storages==1.13.1
 zappa==0.55.0
 pysqlite3-binary==0.4.7.post8
+python-dotenv==1.0.0

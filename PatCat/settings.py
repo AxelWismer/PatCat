@@ -17,6 +17,10 @@ import os
 import pysqlite3
 import sys
 sys.modules['sqlite3'] = pysqlite3
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,14 +33,14 @@ from .secret import secret_key
 SECRET_KEY = secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 DEBUG_FILE_STORAGE = False
 LOCAL = False
 
 TMP_DIR = 'tmp' if LOCAL else '/tmp'
 
 BASE_URL = '' if LOCAL else 'dev/'
-ALLOWED_HOSTS = ['houv30niob.execute-api.us-east-2.amazonaws.com', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -160,8 +164,5 @@ if not DEBUG_FILE_STORAGE:
     AWS_DEFAULT_ACL = None
     AWS_S3_VERIFY = True
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    if LOCAL:
-        AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID', '')
-        AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY', '')
-    AWS_ACCESS_KEY_ID = 'AKIA6N3YUFMRIS55INLM'
-    AWS_SECRET_ACCESS_KEY = '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'
+    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID', '')
+    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY', '')    
