@@ -30,6 +30,8 @@
 							{% for result in patterns %}
 							<!-- <a href="{{ result }}"> -->
 	 								<div class="row">
+										<a class="text-dark" href="{% url 'pattern_detail' pattern_id=result.id %}" class="text-decoration-none">
+
 	 									<div class="ml-5 col-xs-12 col-sm-8 col-md-9 col-lg-10">
 	 										<h3>{{ result.name }}</h3>
 											<h6>{{ result.description }}</h6>
@@ -38,6 +40,8 @@
 											<h6><b>Catálogo:</b>  {{ result.catalogue }}</h6>
 	 									</div>
 	 								</div>
+										</a>
+
 	 							<!-- </a> -->
                 <hr>
 							{% endfor %}
@@ -51,6 +55,4 @@
 {% block scripts %}
 {% endblock %}
 
-
-</script>
 {% endblock %}

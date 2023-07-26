@@ -12,8 +12,8 @@
     <link
       rel="shortcut icon"
       type="image/png"
-      href="{% static 'product.ico' %}"
     />
+      
 
     <!-- Bootstrap	-->
     <!-- CSS -->
@@ -29,20 +29,21 @@
     />
 
     <!-- Navbar-->
-    <div
-      class="d-flex flex-column flex-md-row align-items-center justify-content-between p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"
-    >
-      <h5 class="my-1 mr-md-auto font-weight-normal">PatCat</h5>
-      <h4 class="my-1 mr-md-auto font-weight-normal">Buscador de patrones</h4>
-      <a class="h5 my-1 font-weight-normal text-dark" href="{% url 'admin:index' %}">Admin</a>
 
-      <nav class="my-2 my-md-0 mr-4">
-        <!--Opciones de un usuario staff-->
-      </nav>
-    </div>
   </head>
 
   <body>
+    <div
+    class="navbar-custom d-flex flex-column flex-md-row align-items-center justify-content-between p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"
+  >
+    <a class="h5 my-1 mr-md-auto font-weight-normal text-dark" href="/">PatCat</a>
+    <h4 class="my-1 mr-md-auto font-weight-normal">Buscador de patrones</h4>
+    <a class="h5 my-1 font-weight-normal text-dark" href="{% url 'admin:index' %}">Admin</a>
+
+    <nav class="my-2 my-md-0 mr-4">
+      <!--Opciones de un usuario staff-->
+    </nav>
+  </div>
     <!-- Body -->
     <style type="text/css">
       .main {
